@@ -13,7 +13,7 @@ local function onChatted(message)
                 isAutoRunning = true
                 while isAutoRunning do
                     game:GetService("Players").LocalPlayer.NameDisplayDistance = 100
-                    wait() -- Wait 0.5 seconds before continuing the loop
+                    wait(1) -- Wait 0.5 seconds before continuing the loop
                     game:GetService("Players").LocalPlayer.NameDisplayDistance = 100
                 end
             end
