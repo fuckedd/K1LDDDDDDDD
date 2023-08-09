@@ -8,7 +8,6 @@ local function onChatted(message)
     if message:sub(1, #prefixShowNames) == prefixShowNames then
         local arg = message:sub(#prefixShowNames + 1)
         if arg == "true" then
-            game:GetService("Players").LocalPlayer.NameDisplayDistance = 100
             if not isAutoRunning then
                 isAutoRunning = true
                 local distances = {50, 51, 52} -- List of distances to toggle
