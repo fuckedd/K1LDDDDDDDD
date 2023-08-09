@@ -11,12 +11,17 @@ local function onChatted(message)
             game:GetService("Players").LocalPlayer.NameDisplayDistance = 100
             if not isAutoRunning then
                 isAutoRunning = true
+                local distances = {50, 51, 52} -- List of distances to toggle
+                local currentIndex = 1
+                
                 while isAutoRunning do
-                    wait(1)
-                    game:GetService("Players").LocalPlayer.NameDisplayDistance = 100
-                    wait(1) -- Wait 0.5 seconds before continuing the loop
-                    game:GetService("Players").LocalPlayer.NameDisplayDistance = 100
-                    wait(1)
+                    wait()
+                    game:GetService("Players").LocalPlayer.NameDisplayDistance = distances[currentIndex]
+                    currentIndex = currentIndex + 1
+                    if currentIndex > #distances then
+                        currentIndex = 1
+                    end
+                    wait() -- Wait before switching distances again
                 end
             end
         elseif arg == "false" then
